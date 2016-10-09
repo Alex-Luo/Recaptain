@@ -1,0 +1,25 @@
+{
+  "name": "recapitan",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "./node_modules/.bin/mocha test"
+  },
+  "author": "ReadyTalk",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "huh": "^1.1.4",
+    "lodash": "^4.13.1",
+    "moment": "^2.13.0",
+    "nlp-toolkit": "^0.2.6",
+    "reboundodm": "^0.1.4",
+    "slack": "^7.3.0",
+    "watson-developer-cloud": "^1.10.0"
+  },
+  "devDependencies": {
+    "mocha": "^2.5.3",
+    "should": "^9.0.2"
+  }
+}

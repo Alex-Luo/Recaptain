@@ -1,0 +1,47 @@
+apiVersion: v1
+kind: BuildConfig
+metadata:
+  annotations:
+    openshift.io/generated-by: OpenShiftNewApp
+  creationTimestamp: 2016-07-21T16:20:43Z
+  labels:
+    app: node
+  name: recaptain
+  namespace: recaptain
+  resourceVersion: "389264"
+  selfLink: /oapi/v1/namespaces/recaptain/buildconfigs/recaptain
+  uid: 12b0a1f7-4f5f-11e6-81a2-06897d5e38b1
+spec:
+  output:
+    to:
+      kind: ImageStreamTag
+      name: recaptain:latest
+  postCommit: {}
+  resources: {}
+  source:
+    git:
+      ref: master
+      uri: git@github.com:ReadyTalk/Recaptain.git
+    secrets: null
+    sourceSecret:
+      name: sshsecret
+    type: Git
+  strategy:
+    dockerStrategy:
+      from:
+        kind: ImageStreamTag
+        name: node:6.0
+    type: Docker
+  triggers:
+  - github:
+      secret: o4BwkTZyyiEaiF8tDSv4
+    type: GitHub
+  - generic:
+      secret: bnQUEAP-Hkcs1Uo2nbX1
+    type: Generic
+  - type: ConfigChange
+  - imageChange:
+      lastTriggeredImageID: node@sha256:91d0f8bfc04cad257e8c22eb2dde639c8ac7cd5c57dc142b99bf4f56e8c74490
+    type: ImageChange
+status:
+  lastVersion: 6

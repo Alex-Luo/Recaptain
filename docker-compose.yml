@@ -1,0 +1,14 @@
+postgres:
+    image: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=Recaptain
+      - POSTGRES_PASSWORD=chipotle
+
+bot:
+  build: .
+  volumes:
+    - ".:/src/app"
+  environment:
+    - token=xoxb-50511748432-Rztd1yjENcRHpJ9llAfMQbpd
